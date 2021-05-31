@@ -6,6 +6,8 @@ const serverLess = require('serverless-http')
 const app = express()
 app.use(cors())
 
+// app.listen(3002)
+
 const router = express.Router()
 
 router.get('/buscaDadosReceita/:cnpj',async(req,res)=>{
@@ -18,7 +20,7 @@ router.get('/buscaDadosReceita/:cnpj',async(req,res)=>{
 })
 
 router.get('/',(req,res)=>{
-   res.send('api is working')
+   res.send('api is working / teste')
 })
 
 app.use('/.netlify/functions/api',router)
