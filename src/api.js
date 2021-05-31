@@ -6,13 +6,11 @@ const serverLess = require('serverless-http')
 const app = express()
 app.use(cors())
 
-app.listen(3002)
-
 const router = express.Router()
 
 router.get('/buscaDadosReceita/:cnpj',async(req,res)=>{
     try {
-      const dados = await axios.get('http://www.receitaws.com.br/v1/cnpj/'+req.params.cnpj)
+      const dados = await axios.get('http://www.receitaws.com.br/v1/cnpj/' + req.params.cnpj.replace(/[^\d]+/g,''))
         return res.send(dados.data)
     } catch (error) {
         return res.send(error)
