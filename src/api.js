@@ -24,6 +24,11 @@ router.get('/',(req,res)=>{
    res.send('api is working')
 })
 
+router.get('/teste',(req,res)=>{
+    res.send('rota get de teste')
+ })
+ 
+
 app.use('/.netlify/functions/api',router)
 
 module.exports.handler = serverLess(app)
