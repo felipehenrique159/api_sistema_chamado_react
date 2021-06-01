@@ -20,7 +20,7 @@ router.get('/buscaDadosReceita/:cnpj',async(req,res)=>{
 })
 
 router.get('/',(req,res)=>{
-   res.send('api is working / teste')
+   res.send('api is working')
 })
 
 app.use('/.netlify/functions/api',router)
